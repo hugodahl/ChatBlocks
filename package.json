@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/instafluff/ChatBlocks#readme",
   "dependencies": {
-    "webwebweb": "^1.4.0"
+    "webwebweb": "^1.4.10"
   }
 }
