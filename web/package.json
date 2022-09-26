@@ -30,7 +30,7 @@
     "license": "gulp checkLicenses",
     "lint": "eslint .",
     "package": "gulp package",
-    "prepare": "npm run package",
+    "prepare": "npm run snyk-protect && npm run package",
     "recompile": "gulp gitPreCompile && npm run bump && gulp gitPostCompile",
     "release": "gulp gitCreateRC",
     "test": "concurrently 'npm run test:prepare' 'sleep 5 && npm run test:run'",
@@ -39,7 +39,8 @@
     "test:setupselenium": "selenium-standalone install --config=./tests/scripts/selenium-config.js",
     "test:startselenium": "selenium-standalone start --config=./tests/scripts/selenium-config.js",
     "typings": "gulp typings",
-    "updateGithubPages": "gulp gitUpdateGithubPages"
+    "updateGithubPages": "gulp gitUpdateGithubPages",
+    "snyk-protect": "snyk-protect"
   },
   "main": "./index.js",
   "umd": "./blockly.min.js",
@@ -94,6 +95,8 @@
     "unused": true
   },
   "dependencies": {
-    "jsdom": "^15.2.1"
-  }
+    "jsdom": "^15.2.1",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
